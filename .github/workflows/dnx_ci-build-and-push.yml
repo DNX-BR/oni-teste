@@ -2,10 +2,8 @@ name: Build and Push Oni Image
 
 on:
   push:
-    branches-ignore:
-      - '*'
     tags:
-      - 'v*.*.*'
+      - '*'
 
 env:
   # Não Alterar a variável BRANCH
