@@ -1,0 +1,15 @@
+.vscode/
+cache_build/
+node_modules/
+package-lock.json
+dist/*.yaml
+Dockerfile
+README.md
+.env*
+.git*
+.docker*
+Makefile
+.env.template
+.gitattributes
+.gitignore
+teste.js
