@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 const fs = require('fs');
-const { BuildImageBuildKit, PushImageCrane } = require('./docker');
-const { DeployECS } = require('./ecs');
-const { initSample, ScanImageTrivy } = require('./utils');
-const { DeployS3 } = require('./s3');
-const { UpdateLambda } = require('./serverless');
+const { BuildImageBuildKit, PushImageCrane } = require('./src/docker');
+const { DeployECS } = require('./src/ecs');
+const { initSample, ScanImageTrivy } = require('./src/utils');
+const { DeployS3 } = require('./src/s3');
+const { UpdateLambda } = require('./src/serverless');
 const { util } = require('s3-sync-client');
 
 async function init() {

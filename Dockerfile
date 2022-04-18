@@ -31,7 +31,9 @@ RUN wget https://github.com/google/go-containerregistry/releases/download/v0.8.0
 RUN mkdir -p /trivy && cd /trivy && \
     wget https://github.com/aquasecurity/trivy/releases/download/v0.23.0/trivy_0.23.0_Linux-64bit.tar.gz && \
     tar -xvf trivy_0.23.0_Linux-64bit.tar.gz && mv trivy /usr/bin/ && rm -f trivy_0.23.0_Linux-64bit.tar.gz
-    
+
+RUN wget https://github.com/mikefarah/yq/releases/download/v4.23.1/yq_linux_amd64 && mv yq_linux_amd64 /usr/bin/yq && chmod +x /usr/bin/yq
+
 FROM base_debian
 
 COPY --from=base /usr/src/app/dist/oni /usr/bin/oni

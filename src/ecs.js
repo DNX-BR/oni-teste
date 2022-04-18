@@ -409,6 +409,7 @@ async function PrintEventsECS() {
         let events = service.$response.data.services[0].events;
         events.sort(GetSortOrder('createdAt'));
         const eventsSize = events.length - 1;
+
         if (eventsSize <= 0) {
 
             if (lastIdMessage != events[0].id)

@@ -34,7 +34,7 @@ async function PushImageCrane(app, tag, assumeRole) {
     const APP_IMAGE = APP.APP_IMAGE;
     const APP_REGION = APP.APP_REGION;
 
-    const authEcr = await DockerLoginECR(assumeRole,APP_REGION);
+    const authEcr = await DockerLoginECR(assumeRole,APP_REGION,app);
 
     await shell.exec(`crane auth login ${APP_IMAGE.split('/')[0]} -u AWS -p ${authEcr.password}`,{ silent: true });
     const result = await shell.exec(`crane push image.tar ${APP_IMAGE}:${tag}`);
@@ -54,7 +54,7 @@ async function LoginEcr(app) {
     await shell.exec(`crane auth login ${APP_IMAGE.split('/')[0]} -u AWS -p ${authEcr.password}`,{ silent: true });
 }
 
-async function DockerLoginECR(assumeRole,appRegion) {
+async function DockerLoginECR(assumeRole,appRegion, app) {
     try {
 
         let confCredential = {

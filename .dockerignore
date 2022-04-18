@@ -12,4 +12,9 @@ Makefile
 .env.template
 .gitattributes
 .gitignore
-teste.js
+.gitlab-ci.yaml
+examples/
+Makefile
+oni.yaml
+oni*.yaml
+examples/
